@@ -2,28 +2,12 @@ package com.user;
 
 public class UserArr {
 
-	private static User[] arr = new User[3];
+	private static User[] arr;
 	static boolean v = false;
 
 	public static User[] addUser() {
-		User u = new User();
-		u.setUserId(120);
-		u.setName("alex");
-		u.setAge("27");
-
-		User u1 = new User();
-		u1.setUserId(121);
-		u1.setName("john");
-		u1.setAge("37");
-
-		User u2 = new User();
-		u2.setUserId(122);
-		u2.setName("richard");
-		u2.setAge("57");
-
-		arr[0] = u;
-		arr[1] = u1;
-		arr[2] = u2;
+		
+		 arr = new User[] { new User(120, "alex", "27"),new User(121, "john", "24"),new User(123, "alex", "29")};
 		return arr;
 	}
 
