@@ -9,7 +9,6 @@ public class SpecialMovie extends Movie {
 	
 	
 	
-	
 	public SpecialMovie(String movieName, String producedBy, String soundEffects, String visualEffects) {
 		super(movieName, producedBy);
 		this.soundEffects = soundEffects;
@@ -18,7 +17,7 @@ public class SpecialMovie extends Movie {
 	
 	
 	
-	public void showMovieInformation() {
+	public void showSPInformation() {
 		super.showMovieInformation();
 		System.out.println(" sound= "+soundEffects +" visual= "+visualEffects );
 	}

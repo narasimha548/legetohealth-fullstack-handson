@@ -11,7 +11,7 @@ public class InternationalMovie extends Movie {
 		this.language = language;
 	}
 
-	public void showMovieInformation() {
+	public void showInternaltionalMovieInformation() {
 		super.showMovieInformation();
 		System.out.println(" country= " + country + " language= " + language);
 	}
