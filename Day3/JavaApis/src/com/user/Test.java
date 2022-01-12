@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Test {
 
-	private static User[] addUser;
-
 
 	public static void main(String[] args) {
 
@@ -14,7 +12,7 @@ public class Test {
 		System.out.println("Enter user id:: ");
 		int id=sc.nextInt();
 		try {
-			addUser = UserArr.addUser();
+			User[]	addUser = UserArr.addUser();
 			User searchId = UserArr.searchId(id);
 			if(searchId!=null)
 				System.out.println("User deatils :: "+searchId);

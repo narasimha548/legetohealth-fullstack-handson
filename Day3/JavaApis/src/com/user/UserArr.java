@@ -7,7 +7,7 @@ public class UserArr {
 
 	public static User[] addUser() {
 		
-		 arr = new User[] { new User(120, "alex", "27"),new User(121, "john", "24"),new User(123, "alex", "29")};
+	  arr = new User[] { new User(120, "alex", "27"),new User(121, "john", "24"),new User(123, "alex", "29")};
 		return arr;
 	}
 

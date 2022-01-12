@@ -99,8 +99,9 @@ public class Movie {
 	}
 
 	public void showMovieInformation() {
+		System.out.println("-------Movie Class--------");
 		System.out.println("movie name = " + movieName + " produced by= " + producedBy + " directed by = " + dircetedBy
-				+ " duration = " + duration +"  year = "+year);
+				+ " duration = " + duration +"  year = "+year + "  categary = "+category);
 	}
 	
 	public String movieInfo() {

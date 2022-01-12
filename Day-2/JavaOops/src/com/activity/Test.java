@@ -9,7 +9,7 @@ public class Test {
 		m.showMovieInformation();
 		Movie.Count();
 		
-		System.out.println("---------------");
+		System.out.println("----------------------------------");
 		Movie m1=new Movie("Batman", "DC", "Nolan", "150", "2002", "Action");
 		m1.showMovieInformation();
 		Movie.Count();
@@ -18,12 +18,16 @@ public class Test {
 		System.out.println("movie name apend "+movieId);
 		
 		String movieInfo=m1.movieInfo();
-		System.out.println("movie info === "+movieInfo);
+		System.out.println("movie info ========== "+movieInfo);
 		
-		SpecialMovie spmovie=new SpecialMovie("superman", "DC", "Dolby 5.0", "3d");
+		System.out.println("---------------------------------------");
+		
+		SpecialMovie spmovie=new SpecialMovie("Ironman", "marvel", "rusos", "155", "2008", "action", "dolby 5.1", "3D");
 		spmovie.showSPInformation();
 		
-		InternationalMovie ima1=new InternationalMovie("Batman", "DC", "US", "English");
+		System.out.println("---------------------------------------");
+		
+		InternationalMovie ima1=new InternationalMovie("BB", "DVS", "Rajamouli", "175", "2015", "Action", "India", "Telugu");
 		ima1.showInternaltionalMovieInformation();
 		
 	}
