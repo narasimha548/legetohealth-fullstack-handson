@@ -14,7 +14,7 @@ public class EmployeeStorageImpl implements IEmployeeStorage {
 	@Override
 	public int save(Employee emp) {
 
-		System.out.println("list data:: " + lst);
+	//	System.out.println("list data:: " + lst);
 		lst.add(emp);
 		return emp.getId();
 	}
