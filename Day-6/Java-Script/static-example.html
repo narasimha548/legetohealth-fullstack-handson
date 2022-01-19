@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Static Example</title>
+   
+</head>
+<body>
+
+    <script>
+        class Test{
+            x=10;
+            static y=20;
+            hello(){
+                console.log("inside non static  x="+this.x +" y="+this.y);
+            }
+
+            static demo(){
+                console.log("inside non static  x="+this.x +" y="+this.y);
+            }
+        }
+
+        var t=new Test();
+        t.hello();
+        Test.demo();
+    </script>
+    
+</body>
+</html>

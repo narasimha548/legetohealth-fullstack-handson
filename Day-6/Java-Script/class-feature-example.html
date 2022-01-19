@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>New way of Creating Class</title>
+    
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(name,age,address){
+                this.name=name;
+                this.age=age;
+                this.address=address;
+            }
+            //creating function , dont use function keyword
+            display(){
+                document.write(" <p> name : "+this.name +" , age"+this.age +" , address "+this.address +" </p>");
+            }
+        }
+
+        class Teacher extends Student{
+            constructor(name,age,address,reportsTO){
+               super(name,age,address);
+               this.reportsTO=reportsTO;
+            }
+            display(){
+                document.write(" <p> name : "+this.name +" , age"+this.age +" , address "+this.address +" ,reportsTo "+this.reportsTO  +" </p>");
+            }
+        }
+
+        var t=new Teacher('Alex',28,'HYD','RGTD');
+        t.display();
+    </script>
+    
+</body>
+</html>

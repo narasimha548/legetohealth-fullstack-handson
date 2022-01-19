@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+   <style>
+       .gallery{
+           width: 100px; height: 100px;
+       }
+   </style>
+</head>
+<body>
+
+    <h1 id="i1" style="color:blueviolet" >Hi welcome to java script !!!</h1>
+    
+    <img src="C:\Users\Admin\legetohealth-fullstack-handson\Day-6\images\panda.jpeg"  id="mainImage" width="400" height="200" />
+
+    <hr/>
+
+    <div onclick="handleClick(event)">
+        <img src="C:\Users\Admin\legetohealth-fullstack-handson\Day-6\images\penguin.jpeg" class="gallery"/> 
+        <img src="C:\Users\Admin\legetohealth-fullstack-handson\Day-6\images\tiger.jpeg" class="gallery"/>
+        <img src="C:\Users\Admin\legetohealth-fullstack-handson\Day-6\images\minions.jpeg" class="gallery"/>
+    </div>
+
+    
+
+    <script type="text/javascript">
+        var counter=0;
+
+        function handleClick(event){
+            alert("hello");
+           
+            console.log(" -- "+event.target.tagName);
+            var colors=['red','green','blue'];
+
+            var x=document.getElementById("i1");
+            x.color.style=colors[counter++];
+
+            var y=document.getElementById('mainImage');
+
+            if(event.target.tagName='IMG'){
+                    y.src=event.target.src;
+            }
+            
+        }
+
+    </script>
+    
+    
+</body>
+</html>
