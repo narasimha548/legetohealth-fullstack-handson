@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 
 
 export class EmployeeList extends React.Component{
@@ -6,17 +7,18 @@ export class EmployeeList extends React.Component{
         super(props);
         this.state={employess:[]};
     }
- 
-    handleCLick=event=>{
-        this.setState({
-            employess:[{id:100,name:'alex',salary:200},{id:200,name:'bruce',salary:300}]
-        })
+    handleRefresh = (event) => {
+        let url = 'http://localhost:9090/employees';
+        axios.get(url)
+        .then((response) => this.setState({employees : response.data}))
+        .catch((err) => console.log(err))
     }
+  
 
     render(){
         return(<div>
             <h2>EmployeeList Data !!! </h2>
-            <button onClick={this.handleCLick}>Referesh</button>
+            <button onClick={this.handleRefresh}>Referesh</button>
 
             <table className="table table-striped">
                 <thead>

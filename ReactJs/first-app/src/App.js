@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <h1>Welcome to React JS!!!</h1>
-      <EmployeeCurd></EmployeeCurd>
+    <EmployeeList></EmployeeList>
           </div>
   );
 }
