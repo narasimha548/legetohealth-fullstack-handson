@@ -1,10 +1,14 @@
 let app=require('express')();
 let mysql=require('mysql');
 let bodyParser = require('body-parser');
+let cors = require('cors');
+app.use(cors({origin : 'http://localhost:3000/'}));
+
 let port=9090;
 
 app.use([bodyParser.text(), bodyParser.json()]);
 app.listen(port,()=>console.log(`Server started with port no: ${port}`));
+
 
 let con=mysql.createConnection({
     host:'localhost',
