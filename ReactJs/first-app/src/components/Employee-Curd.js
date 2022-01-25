@@ -28,6 +28,7 @@ export class EmployeeCurd extends React.Component{
     render(){
         return(<div>
               <form onSubmit={this.hanldeSubmit}>
+                  <h2>Store Data !!</h2>
                   <div>
                       <input type="text" name="name" onChange={this.handleOnChange}  autoComplete="off"></input>
                   </div>
@@ -40,4 +41,20 @@ export class EmployeeCurd extends React.Component{
               </form>
         </div>)
     }
+}
+
+
+export class EmployeeUpdate extends React.Component{
+    render() {
+        return (<div>
+            <h3>Update Employee</h3> <hr />
+            <label>
+                Id <input type = 'text'></input>
+                <br />
+                Salary <input type = 'number'></input>
+                <br />
+                <button>Update</button>
+            </label>
+        </div>)
+    }   
 }
