@@ -1,0 +1,14 @@
+<p>parent works!</p>
+<div>
+    <h2>Parent component {{firstName}}</h2>
+    <div>
+        <app-child></app-child> 
+    </div>
+    <h2>Iterating Child component !!!</h2>
+
+    <div *ngFor='let u of users'>
+        <app-child [username] ='u'></app-child> 
+    </div>
+
+</div>
+

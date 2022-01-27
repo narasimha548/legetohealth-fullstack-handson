@@ -7,6 +7,8 @@ import { DemoComponent } from './demo/demo.component';
 import { DataBindComponent } from './data-bind/data-bind.component';
 import { FormsModule } from '@angular/forms';
 import { GenderPipe } from './gender.pipe';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { GenderPipe } from './gender.pipe';
     HelloComponent,
     DemoComponent,
     DataBindComponent,
-    GenderPipe
+    GenderPipe,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
