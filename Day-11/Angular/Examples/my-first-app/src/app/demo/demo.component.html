@@ -1,0 +1,10 @@
+
+
+<p>{{name | uppercase}} , {{price | currency:'INR'}}, {{dob |  date:'dd-MM-yyyy'}}</p> <hr/>
+
+<div>
+    <p *ngIf = 'status'>Status: {{status}}</p>
+    <ol>
+        <li *ngFor = 'let f of fruits'>{{f}}</li>
+    </ol>
+</div>

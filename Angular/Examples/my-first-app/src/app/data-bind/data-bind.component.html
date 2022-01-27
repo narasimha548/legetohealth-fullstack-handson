@@ -1,0 +1,18 @@
+
+<div>
+    <h4>Username is :  {{username}}</h4>
+    <!-- #un is template -->
+    <input type="text" #un>
+
+    <button (click)='handleClick(un.value)'>Click</button>
+    <div [hidden]='toggleButton'> Display message  </div>
+     <div>{{toggleButton}}</div>
+    <button [disabled]='toggleButton'>Click2</button>
+    <hr/>
+
+    <!-- 2 way data binding examples-->
+    <input type="number"  [(ngModel)]='phoneNumber' /> <br/>
+    <p>{{phoneNumber}}</p>
+
+    <button class="btn btn-primary">Test Button</button>
+</div>

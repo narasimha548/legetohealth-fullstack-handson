@@ -20,6 +20,7 @@ export class EmployeeCurd extends React.Component{
 
      axios.post("http://localhost:9090/save",this.state).then(response=>{
          console.log(response);
+       response;  
      }).catch(err=>{
          console.log(err);
      })

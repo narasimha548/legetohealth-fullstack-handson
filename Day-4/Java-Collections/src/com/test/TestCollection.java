@@ -42,9 +42,7 @@ public class TestCollection {
 			System.out.println("\n 1. Store \n 2.find by id  \n 3.findl all \n 4. delete by id \n 5. exit  \n ");
 
 			break;
-		case 2:
-			
-
+		
 		default:
 			break;
 		}
