@@ -1,0 +1,27 @@
+
+<div>
+    <h2>Template Driven Form Example</h2> <br/>
+
+    <div>
+        <form #simpleForm="ngForm" (ngSubmit)="handleSubmit(simpleForm.value)">
+            <div>
+            Username:    <input type="text" name="un" ngModel autocomplete="off" #un="ngModel" required/>
+            <span class="text-danger" [hidden]="un.valid || un.pristine">Username is mandatory</span>
+            </div>
+            <div>
+                Password : <input type="password" name="pwd" ngModel  #pwd="ngModel" required/>
+                <span class="text-danger" [hidden]="pwd.valid || pwd.pristine">Password is mandatory</span>
+            </div>
+            <div>
+                <input type="submit" value="Login" [disabled]="simpleForm.invalid">
+            </div>
+        </form><br/>
+        <div>
+            <h3>Simple Form values</h3>
+            <p>{{simpleForm.value | json}}</p>
+            <p>Form is valid {{simpleForm.valid}}  , Form invalid {{simpleForm.invalid}}</p>
+            <p>Username is valid {{un.valid}} , pristine :  {{un.pristine}} </p>
+            <p>Password is valid {{pwd.valid}} , pristine:  {{pwd.pristine}}</p>
+        </div>
+    </div>
+</div>
