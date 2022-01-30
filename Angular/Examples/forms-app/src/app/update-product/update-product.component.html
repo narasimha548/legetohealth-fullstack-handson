@@ -1,0 +1,23 @@
+
+
+<div>
+    <div>
+        <form [formGroup]='product' (ngSubmit)='updateProduct()'>
+            <div>
+                Id : <input type="number" formControlName='id'  autocomplete="off"/>
+            </div>
+            <div>
+                name : <input type="text" formControlName='name' autocomplete="off" />
+            </div>
+            <div>
+                Price : <input type="number" formControlName='price' autocomplete="off" />
+            </div>
+            <div>
+                <input type="submit" value="Store">
+            </div>
+        </form>
+    </div> <br/>
+    <div>
+        {{res}}
+    </div>
+</div>

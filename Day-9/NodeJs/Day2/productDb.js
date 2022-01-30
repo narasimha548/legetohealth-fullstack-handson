@@ -1,10 +1,14 @@
 let app=require('express')();
 let mongoClient=require('mongodb').MongoClient;
+let cors=require('cors');
 
+let bodyParser = require('body-parser');
 let dbUrl="mongodb://localhost:27017";
 let port=9090;
 
 app.listen(port,()=>console.log(`Server started with port no: ${port}`));
+app.use([bodyParser.text(), bodyParser.json()]);
+app.use(cors({origin : '*'}));
 
 app.get('/product', (request, response) => {
     mongoClient.connect(dbUrl, {useNewUrlParser : true}, (err, client) => {
@@ -48,7 +52,7 @@ app.get('/product/:id',(request,response)=>{
             },()=>{
 
                 if(x==0){
-                    response.json({err:`sorry id not found ${id}`});
+                    response.status(404).json({err:`Sorry Product not found with the id : ${id}`});
                 }
                 client.close();
             });
@@ -60,36 +64,46 @@ app.get('/product/:id',(request,response)=>{
 
 
 app.post('/product',(request,response)=>{
-    let user = request.body;
-    let id = parseInt(user._id);
-    console.log(id);
+    
     mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
         if(err) throw err;
         {
-            var data= {_id:id,name:user.name,salary:user.salary};
+    let user = request.body;
+    let id = parseInt(user.id);
+    console.log( "request data ===> "+user);
+            var data= {_id:id,name:user.name,price:user.price};
             let myDB = client.db('mydb');  
                myDB.collection("product").insertOne(data,(err,res)=>
                {
-                   if(err) throw err ; 
-                response.send(`1 Document Stored Successfully !!! ${JSON.stringify(data)}`);
+                   if(err){
+                     response.send({ err : ' Unable to Store Product ,Please try after some time'});
+                   }  else{
+                    response.send({res : ' Product Saved successfully '});
+                   }
+               
                 client.close();
                });
         }
     });
 });
-app.put('/product/:_id/:name/:salary',(request,response)=>{
+
+app.put('/product/:_id/:name/:price',(request,response)=>{
 let id = parseInt(request.params._id);
 console.log(id);
 let name = request.params.name;
-let salary = parseInt(request.params.salary);
-MongoClient.connect(dbURL,{useNewUrlParser:true},(err,client)=>{
+let price = parseInt(request.params.price);
+mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
     if(err) throw err;
         let myDB = client.db('mydb');
         var findwith = {_id:id};
-        var setData = {$set:{name:name,salary:salary}};
+        var setData = {$set:{name:name,price:price}};
          myDB.collection("product").updateOne(findwith,setData,(err,res)=>{
-            if(err) throw err;
-            response.send(` document(s) Updated`);
+            if(err){
+                response.send({err : `Unable to Update the product , please try again !! `});
+            }
+            else{
+            response.send({res : `Product Updated with the Id : ${id}` });
+        }
             client.close();
          });
     });
@@ -102,8 +116,13 @@ mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
         let myDB = client.db('mydb');
         var myquery = {_id:id};
             let delete_data = myDB.collection("product").deleteOne(myquery,(err,res)=>{
-                if(err)throw err;
-                response.send(`document deleted!!`);
+                if(err){
+                    response.send({err : 'Unable to delete the product, please try again !!'})
+                }
+                else{
+                    response.send({res:'document deleted sucessfully'});
+                }
+               
                 client.close();
             }); 
 });

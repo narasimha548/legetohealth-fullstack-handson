@@ -1,0 +1,17 @@
+
+<div>
+    <h3> Delete product by Id </h3>
+
+    <form [formGroup] = 'product' (ngSubmit) = 'deleteProduct()'>
+        <label>
+            Enter id
+            <input type = 'number' formControlName = 'id' />
+        </label>
+        <input type = 'submit' value = 'Delete' class = 'btn btn-primary'>
+    </form>
+
+    <div>
+        {{prdct | json}}
+    </div>
+
+</div>

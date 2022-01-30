@@ -1,0 +1,28 @@
+<h3>Fetch All Products </h3>
+ 
+<div>
+    <button (click)='handleSubmit()'>Fetch</button>
+
+    <div>
+        <div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let prd of products">
+                <td>{{prd._id}}</td>
+                <td>{{prd.name}}</td>
+                <td>{{prd.price}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+
