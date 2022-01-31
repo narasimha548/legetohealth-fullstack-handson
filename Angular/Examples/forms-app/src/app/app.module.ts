@@ -11,6 +11,27 @@ import { FetchProductsComponent } from './fetch-products/fetch-products.componen
 import { StoreProductComponent } from './store-product/store-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { RouterDemoComponent } from './router-demo/router-demo.component';
+import { Routes , RouterModule } from '@angular/router';
+import { SuccessComponent } from './success/success.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
+import { AuthDemoGuard } from './auth-demo.guard';
+
+let routeConfig: Routes = [
+  {path : '', component : FetchProductsComponent},
+  {path : 'fetchAll', component : FetchProductsComponent},
+  {path : 'fetchById', component : FetchProductComponent},
+  {path : 'tdf', component : TemplateDrivenFormsComponent},
+  {path : 'mdf', component : ModelDrivenFormComponent},
+  {path : 'success/:un' , component : SuccessComponent , canActivate : [AuthDemoGuard],children : [
+    {path : '' , component : DashboardComponent},
+    {path : 'dashboard' , component : DashboardComponent},
+    {path : 'profile' , component : ProfileComponent},
+    {path : 'settings', component : SettingsComponent}
+  ]}
+]
 
 @NgModule({
   declarations: [
@@ -21,13 +42,19 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
     FetchProductsComponent,
     StoreProductComponent,
     UpdateProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    RouterDemoComponent,
+    SuccessComponent,
+    DashboardComponent,
+    ProfileComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routeConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@
 </div> -->
 
 
-<div class = 'container-fluid'>
+<!-- <div class = 'container-fluid'>
   <div class = 'row'>
     <div class = 'col-4'>
       <app-store-product></app-store-product>
@@ -36,5 +36,19 @@
     <app-delete-product></app-delete-product>
   </div>
   <hr/>
-  
+   -->
+
+   <div class = 'container-fluid'>
+    <div class = 'text-center'>
+      <h2>Angular App</h2><hr />
+    </div>
+    <div>
+      <a routerLink = "fetchById">Product</a> /
+      <a routerLink = "fetchAll">All Products</a> /
+      <a routerLink = "tdf">TDF</a> /
+      <a routerLink = "mdf">MDF</a> /
+    
+    </div>
+    <router-outlet></router-outlet>
+  </div>
   
