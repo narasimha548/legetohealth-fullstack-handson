@@ -7,5 +7,40 @@
 <body>
 	<h2>Welcome to Spring Web MVC</h2>
 	<a href="spring/user/datetime">Date Time</a>
+	<br />
+	<hr />
+
+	<a href="spring/user/getAll">Users Data</a>
+	<br />
+	<!-- <a href="spring/user/updateUser">Edit User</a> -->
+
+	<h3>User Registration Form</h3>
+	<form action="spring/user/save" method="post">
+		Name: <input type='text' name='n1'  autocomplete="off"/> <br /> Password: <input
+			type='password' name='pwd' /> <br /> Age: <input type='number'
+			name='age' /> <br /> <input type='submit' value='Register' />
+	</form>
+
+	<hr />
+
+	<!-- <h3>Update User Data</h3>
+	<form action="spring/user/updateUser" method="post">
+		User Id : <input type="number" name="userId"><br /> Name: <input
+			type='text' name='n1' /> <br /> Password: <input type='password'
+			name='pwd' /> <br /> Age: <input type='number' name='age' /> <br />
+		<input type='submit' value='Update' />
+	</form> -->
+
+	<hr />
+
+	<!-- <form action="spring/user/deleteUser" method="get">
+		User Id : <input  type="number"  name="id"><br/>
+		<input type = 'submit' value = 'Delete' />
+	</form>
+	<hr/> -->
+	<form action="spring/user/fetchUser" method="get">
+		User Id : <input type="number" name="id"><br /> <input
+			type='submit' value='Fecth' />
+	</form>
 </body>
 </html>
