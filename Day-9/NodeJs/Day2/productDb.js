@@ -33,6 +33,30 @@ app.get('/product', (request, response) => {
 });
 
 
+app.get('/user/:name',(request,response) =>{
+    console.log('Name is :'+request.params.name);
+    let username=request.params.name
+    mongoClient.connect(dbUrl,{useNewUrlParser:true},(err,client)=>{
+
+        if(!err){
+            let mydb=client.db("mydb");
+            let doc=mydb.collection('user').find({name:username});
+
+            let x=0;
+            doc.forEach((record)=>{
+                x++;
+                response.json(record);
+            },()=>{
+                  if(x==0){
+                        response.status(404).json({err:`Sorry Name is not Found : ${username}`});
+                  }
+                  client.close();
+            })
+        }
+
+    })
+})
+
 app.get('/product/:id',(request,response)=>{
     console.log('id is --->'+request.params.id);
     let id=parseInt(request.params.id);

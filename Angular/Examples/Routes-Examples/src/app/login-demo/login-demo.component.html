@@ -1,0 +1,20 @@
+<div>
+    <h3>Login Page </h3> 
+    <div>
+        <form [formGroup]='user'  (ngSubmit)='handleLogin()'>
+            <div>
+                Username : <input type="text"  formControlName='username'  autocomplete="off"/>
+            </div>
+
+            <div>
+                Password : <input type="password" formControlName='password' />
+            </div>
+
+            <div>
+                <input type="submit" value="Login" />
+            </div>
+            
+        </form>
+
+    </div>
+</div>
