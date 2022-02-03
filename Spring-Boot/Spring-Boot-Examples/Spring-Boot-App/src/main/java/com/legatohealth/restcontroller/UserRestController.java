@@ -63,7 +63,7 @@ public class UserRestController {
 		return response;
 	}
 
-	@PutMapping(path="/edit/{userId} /{password}")
+	@PutMapping(path="/edit/{userId}/{password}")
 	public ResponseEntity<Object> updatePassword(@PathVariable("userId") int userId,
 			@PathVariable("password") String password) {
 		ResponseEntity<Object> response = null;
