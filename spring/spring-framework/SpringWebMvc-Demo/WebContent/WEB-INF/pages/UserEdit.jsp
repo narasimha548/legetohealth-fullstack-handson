@@ -9,7 +9,7 @@
 <body>
 
 <h3>Edit  User Data</h3>
-		<form action = "spring/user/updateUser" method = "post">
+		<form action = "/spring/user/updateUser" method = "post">
 	<!-- 	User Id : <input  type="number"  name="userId"><br/> -->
 		Name: <input type = 'text' name = 'n1'    autocomplete="off"/> <br />
 		Password: <input type = 'password' name = 'pwd' /> <br />
