@@ -1,4 +1,4 @@
-package com.legatohealth.service;
+package com.legatohealth.restcontroller;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.legatohealth.beans.CustomMessage;
 import com.legatohealth.beans.User;
 import com.legatohealth.exceptions.UserNotFoundEception;
+import com.legatohealth.service.UserService;
 
 @RestController
 @RequestMapping("/user")
