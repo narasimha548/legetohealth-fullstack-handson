@@ -12,6 +12,7 @@ public class FirstController {
 	
 	@GetMapping
 	public ResponseEntity<Object>  greetings(){
+		System.out.println("-----Greetings()------");
 		return ResponseEntity.status(HttpStatus.OK).body("First app !!");
 	}
 
